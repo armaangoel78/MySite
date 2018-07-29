@@ -1,0 +1,37 @@
+.navbar {
+   background-color: #222;
+    height: 8vh;
+}
+
+.nav-link {
+    color: #eee;
+    font-size: 1vh;
+}
+
+.nav-link .home {
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.mycontainer {
+    width: 100vw;
+    background-color: red;
+    height: 50vh;
+}
+
+.back-btn {
+    background-color: orange;
+}
+
+.description {
+    background-color: green;
+}
+
+
+.image {
+    background-color: blue;
+}
+
+.fwd-btn {
+    background-color: purple;
+}

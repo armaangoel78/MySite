@@ -1,0 +1,111 @@
+.mycontainer {
+    width: 100vw;
+    background-color: darkblue;
+    padding: 2% 10% 2% 10%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 30% 30% 80%;
+}
+
+.title-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+    
+}
+
+.title-box h1 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.description-box {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+    grid-row-start: 2;
+    grid-row-end: 4;   
+    
+    padding: 2%;
+}
+
+.description-box h1 {
+    text-align: left;
+    color: white;
+    
+    font-size: 3vw;
+    
+}
+
+.description-box p {
+    color: white;
+    font-size: 1.5vw;
+}
+
+
+.image-box {
+    grid-column-start: 2; 
+    grid-column-end: 3;
+    
+    grid-row-start: 2;
+    grid-row-end: 4;
+    
+    padding: 2%;
+    
+}
+
+.button-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    
+    justify-self: center;
+    
+    padding: 2%; 
+}
+
+.button-box button {  
+    width: 100%;
+    height: 100%;
+    
+    background-color: darkblue;
+
+    
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 25px;
+    
+    
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+   
+    .description-box {
+        grid-column-end: 3;
+        grid-row-end: 3;
+    }
+    
+    .image-box {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+    
+    .description-box h1 {
+        font-size: 7vw;
+    }
+    
+    .description-box p {
+        font-size: 3vw;
+    }
+    
+}
+

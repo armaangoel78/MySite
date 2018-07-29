@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
 
     if (req.url == "/") {
         res.setHeader('Content-type', 'text/html');
-        fs.readFile('V2/index.html', (err,html) => {
+        fs.readFile('V3/index.html', (err,html) => {
             if (err) {
                 throw err;
             }
@@ -20,12 +20,21 @@ const server = http.createServer((req, res) => {
         });
     } else if (req.url == "/index.css") {
         res.setHeader('Content-type', 'text/css');
-        fs.readFile('V2/index.css', (err,css) => {
+        fs.readFile('V3/index.css', (err,css) => {
             if (err) {
                 throw err;
             }
         
             res.end(css); 
+        });
+    } else if (req.url == "/index.js") {
+        res.setHeader('Content-type', 'text/js');
+        fs.readFile('V3/index.js', (err,js) => {
+            if (err) {
+                throw err;
+            }
+        
+            res.end(js); 
         });
     }
     
