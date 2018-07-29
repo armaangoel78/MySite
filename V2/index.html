@@ -34,25 +34,25 @@
                 <div class="toggle"><i class="fas fa-bars"></i></div>
             </div>
             <div class="nav-bar">
-                <div class="nav-section home">
-                    <img src="img/me.jpg" class="img-responsive">
-                    <h1 class="display-4">Armaan Goel</h1>
-                </div>
-
-                <div class="nav-section pages">
-                    <h1 class="web">Web</h1>
-                    <h1 class="apps">Apps</h1>
-                    <h1 class="data">Data</h1>
-                    <h1 class="robotics">Robotics</h1>
-                    <h1 class="work">Work</h1>
-                    <h1 class="clubs">Clubs</h1>
-                    <h1 class="education">Education</h1>
-                    <h1 class="contact">Contact</h1>
-                </div>      
+                <div class="navlink"><h1 class="web">Web</h1></div>
+                <div class="navlink"><h1 class="apps">Apps</h1></div>
+                <div class="navlink"><h1 class="data">Data</h1></div>
+                <div class="navlink"><h1 class="robo">Robotics</h1></div>
+                <div class="navlink"><h1 class="work">Work</h1></div>
+                <div class="navlink"><h1 class="clubs">Clubs</h1></div>
+                <div class="navlink"><h1 class="edu">Education</h1></div>
+                <div class="navlink"><h1 class="contact">Contact</h1></div>            
             </div>
             <div class="main">
-                <div class="nav-section bubbles">
-
+                <div class="bubbles">
+                    <div class="web"><div></div></div>
+                    <div class="apps"><div></div></div>
+                    <div class="data"><div></div></div>
+                    <div class="robo"><div></div></div>
+                    <div class="work"><div></div></div>
+                    <div class="clubs"><div></div></div>
+                    <div class="edu"><div></div></div>
+                    <div class="contact"><div></div></div>
                 </div>
             </div>
         </div>
@@ -112,6 +112,30 @@
                     closeMenu();
                 }
                 nav_state = !nav_state;
+            });
+            
+            
+            
+            $('.bubbles > div').css({'opacity': '0'});
+            
+            $('.navlink').hover(function() {
+                var myClass = $(this).find('h1').attr('class');
+                $('.bubbles > .' + myClass).animate({'opacity': '1'}, 'fast');
+            });
+            
+            $('.navlink').click(function() {
+                var myClass = $(this).find('h1').attr('class');
+                myClass = '.bubbles > .' + myClass;
+                $('.bubbles').animate({'padding': '0%'});
+                $('.bubbles > div > div').not(myClass).animate({'height': 0, 'width': 0},'slow');
+                $('.bubbles > div').not(myClass).animate({'flex-grow': 0},'slow');
+                $(myClass+ ' > div').animate({'width': '88vw', 'height': '95vh', 'border-radius': '0px'}, 'slow', function() {
+                    $('.main').css({'background': $(myClass+ ' > div').css('background-color')});
+
+                    $('.bubbles > div').not(myClass).show();
+                    $(myClass+ ' > div').css({'width': '6vh', 'height': '6vh', 'border-radius': '250px'}); 
+                    $('.bubbles').animate({'padding': '2%'});
+                }); 
             });
         });
     </script>
