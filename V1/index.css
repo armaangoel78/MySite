@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "archivo-bold";
+  src: url("/fonts/ArchivoNarrow-bold.ttf");
+}
+
+body {
+    height: 100%;
+}
+.nav-link {
+    text-align: center;
+}
+.nav-link > i {
+    margin-top: 1.5vw;
+    font-size: 5vw;
+    color: white;
+}
+
+.bubble {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 250px;
+}
+
+
+
+
+
+.nav-menu {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows: 20% 20%;  
+    margin-left: 30vw;
+    margin-right: 30vw;
+    grid-gap: 1em;
+}
+
+
+
+.web {
+    background-color: dodgerblue;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: end;
+}
+
+.apps {
+    background-color: red;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: start;
+}
+
+
+.data {
+    background-color: green;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    justify-self: end;
+}
+
+.robot {
+    background-color: orange;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    justify-self: start;
+}
+
+.title {
+    color: black;
+    font-family: archivo-bold;
+    font-size: 5vw;
+}
+
+.hidden {
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    height: 80vh;
+    border-radius: 15px;
+}
+
+.hidden i {
+    font-size: 4vw;
+}
