@@ -1,46 +1,11 @@
-const http = require('http');
-const fs = require('fs');
+var express = require('express');
+var app = express();
+var path = require('path');
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
-
-const server = http.createServer((req, res) => {
-        
-    res.statusCode = 200;
-
-    if (req.url == "/") {
-        res.setHeader('Content-type', 'text/html');
-        fs.readFile('V3/index.html', (err,html) => {
-            if (err) {
-                throw err;
-            }
-
-            res.end(html);
-        });
-    } else if (req.url == "/index.css") {
-        res.setHeader('Content-type', 'text/css');
-        fs.readFile('V3/index.css', (err,css) => {
-            if (err) {
-                throw err;
-            }
-        
-            res.end(css); 
-        });
-    } else if (req.url == "/index.js") {
-        res.setHeader('Content-type', 'text/js');
-        fs.readFile('V3/index.js', (err,js) => {
-            if (err) {
-                throw err;
-            }
-        
-            res.end(js); 
-        });
-    }
-    
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/v5/index.html'));
 });
 
+app.use(express.static('v5/static'))
 
-server.listen(port, hostname, () => {
-    console.log("Server started on " + hostname + ':' + port);
-});
+app.listen(3000);
