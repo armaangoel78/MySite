@@ -96,8 +96,11 @@
 //                return $(this).offset().top < ($(document).scrollTop()  + window.innerHeight)
 //            }).css({'opacity': '1'});
             
+            var scrollWhenSectionOpened = 0;
+            
             $('.expand').click(function() {
                 var section = $(this).parent().parent();
+                scrollWhenSectionOpened = $(document).scrollTop();
                 
                 $(section).animate({
                    'height': '100vh'
@@ -106,12 +109,29 @@
                 $(section).css({'position': 'fixed', 'top': '0', });
 
                 
-                $('body').animate({'scrollTop': $('.apps').offset().top, 'overflow': 'hidden'}, function() {
+                $('body').animate({'overflow': 'hidden'}, function() {
                     $(section).find('.button-box').hide(200);
                     $(section).find('.exit-box')
-                    .animate({'flex-grow': 1, 'opacity': 1});
+                    .animate({'flex-grow': 2, 'opacity': 1});
                 });
                 
+            });
+            
+            $('.exit-box i').click(function () {
+                console.log('hi');
+                var section = $(this).parent().parent().parent();
+                console.log(section);
+                $(section).find('.button-box').show(200);
+                $(section).find('.exit-box')
+                    .animate({'flex-grow': 0, 'opacity': 0});   
+                
+                $('body').css({'overflow': 'visible'});
+                $(section).css({'position': 'static'});
+                $(document).scrollTop(scrollWhenSectionOpened);
+                $(section).css({
+                   'height': 'auto'
+                });
+
             });
             
 //            $(document).scroll(function(){
