@@ -16,7 +16,7 @@
   },
   "engines": {
     "node": "4.1.1"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/armaangoel78/MySite.git"
