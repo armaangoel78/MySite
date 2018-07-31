@@ -30,6 +30,19 @@
 
                             The site is currently in Beta mode, meaning it is only used by Exodus, but it will soon be available for any organization to use with only a minimal hosting and domain charge.
                         </p>
+                        
+                        <div class="visit-box">
+                            <div class="visit-box-btn">
+                                <a href="https://sapphire-web.herokuapp.com">
+                                    <button class="btn bg-primary expand">Visit</button>
+                                </a>
+                            </div>
+                            <div class="visit-box-btn">
+                                <a href="https://github.com/CHSCodeForChange/Sapphire-Web">
+                                    <button class="btn bg-primary expand">Source</button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="image-box box-right">
                         <img src="/img/sapphire-mockup.png" alt="">
@@ -38,23 +51,30 @@
             </div>
             
             <div class="hidden-box">
-                <div class="content-box">
+                <div class="content-box-reverse">
                     <div class="description-box box-left">
-                        <h1 class="description-head">Sapphire</h1>
+                        <h1 class="description-head">HiLite Newspaper</h1>
                         <p class="description-body">
-                            A volunteer management and hour tracking system developed for Exodus Refugee Immigration Inc. This organization expressed that their current paper-and-pencil system for tracking volunteers is very labor intensive, requiring a staff member to pend hours a week crunching the numbers. Our solution not only makes it easier for volunteers to find potentinal opportunities, it also allows organizations to track the hours performed by each volunteer.
-
-                            The site is currently in Beta mode, meaning it is only used by Exodus, but it will soon be available for any organization to use with only a minimal hosting and domain charge.
+                            As the online editor of Carmel High School's HiLite Newspaper, I am reesponsible for the website. The site must not only be good looking, but also responsive to different types of content and different client devices. This involved using the Wordpress platform, adding third party plugins, and further customizing the site using HTML and CSS. 
+                            <br><br>
+                            I added features such as the 'mega menu' a dropdown navbar that contains content previews, and custom pages for each section.
                         </p>
+                        <div class="visit-box">
+                            <div class="visit-box-btn">
+                                <a href="https://hilite.org">
+                                    <button class="btn bg-primary expand">Visit</button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="image-box box-right">
-                        <img src="/img/sapphire-mockup.png" alt="">
+                        <img src="/img/hilite-mockup.png" alt="">
                     </div>
                 </div>
             </div>
             
             <div class="button-box">
-                <button class="btn bg-primary expand">View More Web Projects</button>
+                <button class="btn bg-primary expand">More Web Projects</button>
             </div>
             
         </div>
@@ -73,7 +93,7 @@
             </div>
             
             <div class="visible-box">
-                <div class="content-box">
+                <div class="content-box-reverse">
                     <div class="description-box box-right">
                         <h1 class="description-head">Pearl News</h1>
                         <p class="description-body">
@@ -81,6 +101,7 @@
 
                             The site is currently in Beta mode, meaning it is only used by Exodus, but it will soon be available for any organization to use with only a minimal hosting and domain charge.
                         </p>
+                        
                     </div>
                     <div class="image-box box-left">
                         <img src="/img/news-mockup.png" alt="">
@@ -89,7 +110,7 @@
             </div>
             
             <div class="button-box">
-                <button class="btn bg-danger expand">View More Web Projects</button>
+                <button class="btn bg-danger expand">More App Projects</button>
             </div>
         </div>
     </div>
@@ -122,7 +143,7 @@
             </div>
             
             <div class="button-box">
-                <button class="btn bg-info expand">View More Web Projects</button>
+                <button class="btn bg-info expand">More Data Science Projects</button>
             </div>
         </div>
     </div>
@@ -149,6 +170,8 @@
                     $(section).find('.button-box').hide(200);
                     $(section).find('.exit-box')
                     .animate({'flex-grow': 2, 'opacity': 1});   
+                    
+                    $(section).find('.visit-box').css({'visibility': 'visible'});
 //                    
                     $(section).find('.hidden-box').css({'visibility': 'visible', 'height':'auto'});
                 });
@@ -170,7 +193,7 @@
                 $('.portfolio-section').show();
                 $(document).scrollTop(scrollWhenSectionOpened);
                 $(section).css({
-                   'height': 'auto'
+                   'min-height': 'auto'
                 });
 
             });
