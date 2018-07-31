@@ -1,11 +1,12 @@
 .portfolio-section {
-    width: 100vw;
     padding: 2% 10% 2% 10%;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 20% 30% 30% 20%;
+}
 
+
+.internal-box {    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 60% auto 20%;
 }
 
 .header-box {
@@ -17,6 +18,8 @@
     
     display: flex;
     flex-direction: row;
+    
+    align-items: center;
 }
 
 .exit-box {
@@ -40,8 +43,32 @@
     color: white;
 }
 
+.visible-box {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.hidden-box {
+    visibility: hidden;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    
+    height: 0px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+}
+
 .description-box { 
     padding: 2%;
+    width: 50%;
 }
 
 .description-box h1 {
@@ -59,14 +86,13 @@
 
 
 .image-box {
-    grid-row-start: 2;
-    grid-row-end: 4;
+    width: 50%;
     
 }
 
 .image-box img {
     max-width:100%;
-    max-height: 100%;
+    max-height: 90%;
 }
 
 .button-box {
@@ -103,18 +129,16 @@
 
 @media screen and (max-width: 900px) {
    
+    .content-box {
+        flex-direction: column;
+    }
+    
     .description-box {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
+        width: 100%;
     }
     
     .image-box {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        grid-row-end: 4;
+        width: 100%;
     }
     
     .header-box .title-box h1 {
@@ -127,6 +151,10 @@
     
     .description-box p {
         font-size: 3vw;
+    }
+    
+    .exit-box i {
+        font-size: 10vw;
     }
     
 }

@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var port = 3000;
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/v5/index.html'));
@@ -8,4 +9,5 @@ app.get('/', function(req, res) {
 
 app.use(express.static('v5/static'))
 
-app.listen(3000);
+console.log('Starting server on port ' + port) 
+app.listen(port);
